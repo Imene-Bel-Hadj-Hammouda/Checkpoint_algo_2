@@ -1,0 +1,39 @@
+ALGORITHM Checkpoint_Algo_2_prob1_sol_1   
+// --prob1 solution1---
+VAR
+    set_1 : ARRAY_OF INTEGER[length];
+    set_2 : ARRAY_OF INTEGER[length];
+    sum : INTEGER := 0;
+    i,j : INTEGER;
+BEGIN
+    FOR i FROM 0 TO  set_1.length-1   DO
+        Read(set_1[i]);
+    END_FOR
+
+        FOR i FROM 0 TO set_2.length-1  DO
+         Read(set_2[i]);    
+        END_FOR
+       
+    
+
+
+    FOR i FROM 0 TO set_1.length-1  DO
+      FOR j FROM 0 TO set_2.length-1  DO
+          IF (set_1[i]<> set_2[j]) THEN
+              sum = sum + set_1[i];
+          END_IF
+      END_FOR
+        
+    END_FOR
+
+
+    FOR j FROM 0 TO set_2.length-1  DO
+        FOR i FROM 0 TO set_1.length-1  DO
+            IF (set_2[j] <> set_1[i]) THEN
+                sum = sum + set_2[j];
+            END_IF
+        END_FOR
+    END_FOR
+ Write("The sum of all distinct elements is : ",sum);
+   
+END
